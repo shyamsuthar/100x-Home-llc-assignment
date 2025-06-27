@@ -32,7 +32,9 @@ git clone https://github.com/100x-Home-LLC/data_engineer_assessment.git
 
 **Start the MySQL database in Docker:**
 
+```
 docker-compose -f docker-compose.initial.yml up --build -d
+```
 
 - Database is available on `localhost:3306`
 - Credentials/configuration are in the Docker Compose file
@@ -72,24 +74,11 @@ For MySQL Docker image reference:
 - You may use any CLI or GUI for development, but the final changes must be submitted as python/ SQL scripts
 - **Do not** use ORM migrations—write all SQL by hand
 
-### Solution
-
-> **Document your database design and solution here:**
->
-> - Explain your schema and any design decisions
-> - Give clear instructions on how to run and test your script
-
-> **Document your ETL logic here:**
->
-> - Outline your approach and design
-> - Provide instructions and code snippets for running the ETL
-> - List any requirements
-
 ---
 
 ## Submission Guidelines
 
-- Edit this README with your solutions and instructions for each section
+- Edit the section to the bottom of this README with your solutions and instructions for each section at the bottom.
 - Place all scripts/code in their respective folders (`sql/`, `scripts/`, etc.)
 - Ensure all steps are fully **reproducible** using your documentation
 - Create a new private repo and invite the reviewer https://github.com/mantreshjain
@@ -98,6 +87,15 @@ For MySQL Docker image reference:
 
 **Good luck! We look forward to your submission.**
 
-```
+## Solutions and Instructions (Filed by Candidate)
 
-```
+**Document your database design and solution here:**
+
+- Explain your schema and any design decisions
+- Give clear instructions on how to run and test your script
+
+**Document your ETL logic here:**
+
+- Outline your approach and design
+- Provide instructions and code snippets for running the ETL
+- List any requirements
