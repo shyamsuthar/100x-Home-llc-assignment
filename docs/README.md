@@ -24,26 +24,28 @@ This exercise evaluates your core **data-engineering** skills:
 
 ## 1 Clone the skeleton repo
 
+```
 git clone https://github.com/100x-Home-LLC/data_engineer_assessment.git
+```
 
-✏️ Note: feel free to rename the repo after cloning; the grading script only cares about the folder structure inside. Add you name to the repo.
+✏️ Note: Rename the repo after cloning and add your full name.
 
-2. **Start the MySQL database in Docker:**
+**Start the MySQL database in Docker:**
 
-   docker-compose -f docker-compose.initial.yml up --build -d
+docker-compose -f docker-compose.initial.yml up --build -d
 
-   - Database is available on `localhost:3306`
-   - Credentials/configuration are in the Docker Compose file
-   - **Do not change** database name or credentials
+- Database is available on `localhost:3306`
+- Credentials/configuration are in the Docker Compose file
+- **Do not change** database name or credentials
 
-3. For MySQL Docker image reference:
-   [MySQL Docker Hub](https://hub.docker.com/_/mysql)
+For MySQL Docker image reference:
+[MySQL Docker Hub](https://hub.docker.com/_/mysql)
 
 ---
 
 ### Problem
 
-- You are provided with A raw JSON file containing property records is located in data/raw_properties.json
+- You are provided with a raw JSON file containing property records is located in data/
 - Each row relates to a property. Each row mixes many unrelated attributes (property details, HOA data, rehab estimates, valuations, etc.).
 - There are multiple Columns related to this property.
 - The database is not normalized and lacks relational structure.
@@ -59,7 +61,7 @@ git clone https://github.com/100x-Home-LLC/data_engineer_assessment.git
 
 - **Deliverable:**
   - Write necessary python and sql scripts
-  - Place the scripts inside the `scripts/` directory
+  - Place your scripts in `sql/` and `scripts/`
   - The scripts should take the initial json to your final, normalized schema when executed
   - Clearly document how to run your script, dependencies, and how it integrates with your database.
 
@@ -90,8 +92,12 @@ git clone https://github.com/100x-Home-LLC/data_engineer_assessment.git
 - Edit this README with your solutions and instructions for each section
 - Place all scripts/code in their respective folders (`sql/`, `scripts/`, etc.)
 - Ensure all steps are fully **reproducible** using your documentation
-- Create a Private fork from the original repository and share with https://github.com/mantreshjain
+- Create a new private repo and invite the reviewer https://github.com/mantreshjain
 
 ---
 
 **Good luck! We look forward to your submission.**
+
+```
+
+```
