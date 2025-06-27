@@ -24,9 +24,10 @@ This exercise evaluates your core **data-engineering** skills:
 
 ## 1 Clone the skeleton repo
 
-````bash
+`````bash
 
 git clone https://github.com/100x-Home-LLC/data_engineer_assessment.git
+````bash
 ✏️ Note: feel free to rename the repo after cloning; the grading script only cares about the folder structure inside. Add you name to the repo.
 
 
@@ -99,4 +100,4 @@ git clone https://github.com/100x-Home-LLC/data_engineer_assessment.git
 ---
 
 **Good luck! We look forward to your submission.**
-````
+`````
