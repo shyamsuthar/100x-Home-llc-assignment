@@ -24,18 +24,13 @@ This exercise evaluates your core **data-engineering** skills:
 
 ## 1 Clone the skeleton repo
 
-`````bash
-
 git clone https://github.com/100x-Home-LLC/data_engineer_assessment.git
-````bash
-✏️ Note: feel free to rename the repo after cloning; the grading script only cares about the folder structure inside. Add you name to the repo.
 
+✏️ Note: feel free to rename the repo after cloning; the grading script only cares about the folder structure inside. Add you name to the repo.
 
 2. **Start the MySQL database in Docker:**
 
-   ```bash
    docker-compose -f docker-compose.initial.yml up --build -d
-   ```
 
    - Database is available on `localhost:3306`
    - Credentials/configuration are in the Docker Compose file
@@ -100,4 +95,3 @@ git clone https://github.com/100x-Home-LLC/data_engineer_assessment.git
 ---
 
 **Good luck! We look forward to your submission.**
-`````
