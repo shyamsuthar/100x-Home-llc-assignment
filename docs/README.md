@@ -76,26 +76,70 @@ For MySQL Docker image reference:
 
 ---
 
-## Submission Guidelines
+Database Design
 
-- Edit the section to the bottom of this README with your solutions and instructions for each section at the bottom.
-- Place all scripts/code in their respective folders (`sql/`, `scripts/`, etc.)
-- Ensure all steps are fully **reproducible** using your documentation
-- Create a new private repo and invite the reviewer https://github.com/mantreshjain
+Tables: property, leads, valuation, rehab, hoa, taxes
 
----
+Primary Keys: Each table has a unique key (property_id, hoa_id, taxes_id)
 
-**Good luck! We look forward to your submission.**
+Foreign Keys: Relate hoa, taxes, valuation, rehab, and leads to property
 
-## Solutions and Instructions (Filed by Candidate)
+Design Decisions:
 
-**Document your database design and solution here:**
+Nested JSON fields like HOA and Taxes are stored in separate tables.
 
-- Explain your schema and any design decisions
-- Give clear instructions on how to run and test your script
+Only valid columns from the JSON are inserted into MySQL to prevent errors.
 
-**Document your ETL logic here:**
+Data types are chosen based on field type: INT for numbers, VARCHAR for text, FLOAT for decimals.
 
-- Outline your approach and design
-- Provide instructions and code snippets for running the ETL
-- List any requirements
+ETL Logic
+
+Extract: Read raw JSON file and field configuration Excel file.
+
+Transform:
+
+Flatten nested lists/dictionaries (HOA, Taxes, Valuation, Rehab).
+
+Convert dict/list objects to JSON strings if necessary.
+
+Filter only columns that exist in the MySQL tables.
+
+Load: Insert the cleaned data into MySQL tables using pandas.to_sql() with if_exists='append'.
+
+How to run ETL script:
+
+Install dependencies: pip install -r requirements.txt
+
+Update MySQL credentials in the script.
+
+Run the script: python scripts/load_data.py
+
+Output CSVs are saved in output_csv/ for verification.
+
+Requirements:
+
+Python 3.8+
+
+Pandas, SQLAlchemy, PyMySQL, openpyxl
+
+MySQL 8 running locally or in Docker
+
+Docker Instructions
+
+Base image: python:3.10-slim
+
+Set working directory: /app
+
+Copy JSON, Excel config, scripts, and requirements.txt into /app
+
+Install dependencies: pip install -r requirements.txt
+
+Set environment variables for MySQL credentials
+
+Run the ETL script inside container: CMD ["python", "scripts/load_data.py"]
+
+Build image: docker build -t home_data_loader .
+
+Run container: docker run --env-file .env home_data_loader
+
+Optionally, mount a local folder to save CSV backups and logs
